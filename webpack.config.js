@@ -1,20 +1,32 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+
+const PATHS = {
+    app: path.join(__dirname, 'app'),
+    build: path.join(__dirname, 'build')
+}
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+    entry: {
+        app: PATHS.app
     },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            }
-        ]
-    }
-}
+    output: {
+        path: PATHS.build,
+        filename: '[name].js'
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'webpack-demo'
+        })
+    ],
+    devServer: {
+        stats: "errors-only",
+        host: process.env.HOST,
+        port: process.env.PORT,
+        overlay: {
+            errors: true,
+            warnings: true,
+          },
+    },
+};
