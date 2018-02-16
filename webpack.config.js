@@ -20,9 +20,11 @@ const commonConfig = merge([
         plugins: [
             new HtmlWebpackPlugin({
                 title: 'webpack-demo'
-            })
-        ],
-    }
+            }),
+            
+        ], 
+    },
+    parts.loadCSS()
 ]);
 
 const productConfig = merge([]);
