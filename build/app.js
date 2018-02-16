@@ -72,7 +72,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(1);
 
 
-document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_0__component__["a" /* default */])());
+document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_0__component__["a" /* default */])("xxx"));
 
 /***/ }),
 /* 1 */
@@ -82,7 +82,7 @@ document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_0__component__["a" /*
 /* harmony default export */ __webpack_exports__["a"] = ((text = 'hello, world') => {
     const element = document.createElement('div');
     element.innerHTML = text;
-
+    
     return element;
 });
 
