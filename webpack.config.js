@@ -24,16 +24,20 @@ const commonConfig = merge([
             
         ], 
     },
-    parts.loadCSS()
 ]);
 
-const productConfig = merge([]);
+const productConfig = merge([
+    parts.extractCSS({
+        use: 'css-loader',
+    }),
+]);
 
 const developmentConfig = merge([
     parts.devServer({
         host: process.env.HOST,
         port: process.env.PORT
-    })
+    }),
+    parts.loadCSS(),
 ])
 
 module.exports = env => {
